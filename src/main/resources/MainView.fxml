@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -28,5 +29,6 @@
       <TextField fx:id="result" layoutX="154.0" layoutY="169.0" prefHeight="26.0" prefWidth="323.0" />
       <RadioButton fx:id="revPolNot" layoutX="14.0" layoutY="368.0" mnemonicParsing="false" onAction="#setToPolish" text="Reverse Polish Notation" />
       <RadioButton fx:id="standardInfix" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#setToInfix" text="Standard Infix" />
+      <Button fx:id="execute" layoutX="154.0" layoutY="216.0" mnemonicParsing="false" onAction="#executeExpression" prefHeight="26.0" prefWidth="323.0" text="Execute" />
    </children>
 </Pane>
