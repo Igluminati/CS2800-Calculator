@@ -2,7 +2,7 @@ package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /** @author Igli Kristo zjac300 */
 
