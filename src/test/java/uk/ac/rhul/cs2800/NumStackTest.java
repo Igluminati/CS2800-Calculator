@@ -18,6 +18,6 @@ class NumStackTest {
   // Test 1
   @Test
   public void emptyStackTest() {
-    assertEquals(ns.size(), 0, "Test that a newly created stack is empty");
+    assertEquals(ns.size(), 0, "Tests that a newly created stack is empty");
   }
 }
