@@ -6,6 +6,6 @@ public class RevPolishCalcTest {
 
   @BeforeEach
   void setup() {
-    new 
+    revPolishCalc = new RevPolishCalc();
   }
 }
