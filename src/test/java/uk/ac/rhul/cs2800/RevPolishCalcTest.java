@@ -23,5 +23,6 @@ public class RevPolishCalcTest {
   @Test
   void testValidExpression() {
     assertEquals(9, revPolishCalc.evaluate("3 2 1 + x"));
+    assertEquals(20, revPolishCalc.evaluate("2 5 9 + x 8 -"));
   }
 }
