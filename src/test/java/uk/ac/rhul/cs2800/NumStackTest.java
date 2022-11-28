@@ -16,15 +16,15 @@ class NumStackTest {
     ns = new NumStack();
   }
   
-  /*
-   * Te
+  /**
+   * Test 1 - Push a float to NumStack and check its size.
    *
    * 
-   * 
+   * @result 1 will be returned since the size of stack after one push is 1
    */
   @Test
   public void pushFloatTest() {
-	  ns.push(new Entry(3.0f));
+	  ns.push(3.0f);
 	  assertEquals(ns.size(), 1);
   }
 }
