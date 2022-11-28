@@ -16,4 +16,15 @@ class NumStackTest {
     ns = new NumStack();
   }
   
+  /*
+   * Te
+   *
+   * 
+   * 
+   */
+  @Test
+  public void pushFloatTest() {
+	  ns.push(new Entry(3.0f));
+	  assertEquals(ns.size(), 1);
+  }
 }
