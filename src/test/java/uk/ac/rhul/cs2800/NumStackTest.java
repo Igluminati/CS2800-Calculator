@@ -1,6 +1,7 @@
 package uk.ac.rhul.cs2800;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,9 +16,4 @@ class NumStackTest {
     ns = new NumStack();
   }
   
-  // Test 1
-  @Test
-  public void emptyStackTest() {
-    assertEquals(ns.size(), 0, "Tests that a newly created stack is empty");
-  }
 }
