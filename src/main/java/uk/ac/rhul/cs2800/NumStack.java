@@ -11,8 +11,13 @@ public class NumStack {
 		numstack = new Stack();
 	}
 	
-	public void push(Entry value) {
-		numstack.push(value);
+	public void push(float value) {
+		numstack.push(new Entry(value));
 	}
+
+	public int size() {
+		return numstack.size();
+	}
+	
 	
 }
