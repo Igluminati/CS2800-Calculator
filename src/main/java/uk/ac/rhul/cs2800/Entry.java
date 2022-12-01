@@ -66,9 +66,9 @@ public class Entry {
    * @return number
    */
   
-  public float getValue() throws Exception {
+  public float getValue() throws BadTypeException {
     if (this.type != Type.NUMBER) {
-      throw new Exception("The type must be a NUMBER");
+      throw new BadTypeException("The type must be a NUMBER");
     }
     return number;
   }
@@ -78,9 +78,9 @@ public class Entry {
    * 
    * @return other
    */
-  public Symbol getSymbol() throws Exception {
+  public Symbol getSymbol() throws BadTypeException {
     if (this.type != Type.SYMBOL) {
-      throw new Exception("The type must be a SYMBOL");
+      throw new BadTypeException("The type must be a SYMBOL");
     }
     return other;
   }
@@ -90,9 +90,9 @@ public class Entry {
    * 
    * @return str
    */
-  public String getString() throws Exception {
+  public String getString() throws BadTypeException {
     if (this.type != Type.STRING) {
-      throw new Exception("The type must be a STRING");
+      throw new BadTypeException("The type must be a STRING");
     }
     return str;
   }
