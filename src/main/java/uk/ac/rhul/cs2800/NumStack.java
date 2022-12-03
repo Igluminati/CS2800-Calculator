@@ -28,11 +28,12 @@ public class NumStack {
 	    throw new EmptyStackException();
 	  }
 	  try {
-	    return numstack.pop().getValue();
+	    float value = numstack.pop().getValue();
+	    return value;
 	    } catch (BadTypeException e) {
 	      System.err.println(e);
+	      return 0;
 	      }
-	  return 0f;
 	}
 	
 	

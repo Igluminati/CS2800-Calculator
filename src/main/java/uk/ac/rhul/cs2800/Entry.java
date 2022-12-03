@@ -8,7 +8,7 @@ package uk.ac.rhul.cs2800;
  * Each getters throws an exception if it does not match the constructor.
  * </p>
  * 
- * @author steak
+ * @author Igli Kristo zjac300
  *
  */
 
