@@ -2,6 +2,7 @@ package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,15 +46,28 @@ class NumStackTest {
   }
   
   /**
-   * Test 3 - Tests 
-   * 
+   * Test 3 - Tests that EmptyStackException is thrown by the pop() method when the stack is empty
    * 
    * 
    * @throws EmptyStackException 
    */
   
+  @Test
   public void popEmptyStackTest() throws EmptyStackException {
 	  assertThrows(EmptyStackException.class, () -> ns.pop());
 	  
+  }
+  
+  /**
+   * Test 4 - Tests that isEmpty() method returns true when the stack is empty
+   * 
+   * The purpose of this method is to be consistent with the UML diagram
+   * 
+   * @return true if the stack size is 0
+   */
+  
+  @Test
+  public void emptyStackTest() {
+	  assertTrue(ns.isEmpty());
   }
 }
