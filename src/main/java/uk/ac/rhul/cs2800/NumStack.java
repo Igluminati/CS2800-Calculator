@@ -35,6 +35,10 @@ public class NumStack {
 	      return 0;
 	      }
 	}
+
+	public boolean isEmpty() {
+		return numstack.size() == 0;
+	}
 	
 	
 }
