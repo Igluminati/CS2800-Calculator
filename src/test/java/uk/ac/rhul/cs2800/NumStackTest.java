@@ -28,7 +28,7 @@ class NumStackTest {
   @Test
   public void pushFloatTest() {
 	  ns.push(3.0f);
-	  assertEquals(ns.size(), 1);
+	  assertEquals(ns.size(), 1, "Tests that the size of the stack after being pushed is 1");
   }
   
   /**
