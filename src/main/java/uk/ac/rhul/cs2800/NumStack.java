@@ -2,6 +2,8 @@ package uk.ac.rhul.cs2800;
 
 import java.util.EmptyStackException;
 
+/** @author Igli Kristo zjac300 */
+
 public class NumStack {
 	
 	Stack numstack;
@@ -21,13 +23,16 @@ public class NumStack {
 		return numstack.size();
 	}
 
-	public float pop() throws Exception {
-		try {
-			return numstack.pop().getValue();
-		} catch (Exception e) {
-			System.err.println(e);
-		}
-		return 0f;
+	public float pop() throws EmptyStackException {
+	  if (numstack.size() == 0) {
+	    throw new EmptyStackException();
+	  }
+	  try {
+	    return numstack.pop().getValue();
+	    } catch (BadTypeException e) {
+	      System.err.println(e);
+	      }
+	  return 0f;
 	}
 	
 	
