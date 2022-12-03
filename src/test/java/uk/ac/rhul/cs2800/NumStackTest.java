@@ -35,7 +35,7 @@ class NumStackTest {
    * @result true to indicate that the float popped is the float pushed
    */
   @Test
-  public void PushThenPop() throws Exception {
+  public void PushThenPop() throws BadTypeException {
 	  ns.push(5.0f);
 	  assertEquals(ns.pop().getValue(), 5.0f, "The pop method should return the last value popped from the stack");
 	  assertEquals(ns.size(), 0, "The size of the stack should be 0 after popping the integer 16 pushed onto the stack"); 
