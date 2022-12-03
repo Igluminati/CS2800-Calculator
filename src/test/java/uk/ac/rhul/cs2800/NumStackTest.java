@@ -1,6 +1,8 @@
 package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.EmptyStackException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,10 +37,23 @@ class NumStackTest {
    * @result true to indicate that the float popped is the float pushed
    */
   @Test
-  public void PushThenPop() throws EmptyStackException{
+  public void PushThenPop() throws EmptyStackException {
 	  ns.push(5.0f);
 	  assertEquals(ns.pop(), 5.0f, "The pop method should return the last value popped from the stack");
 	  assertEquals(ns.size(), 0, "The size of the stack should be 0 after popping the integer 16 pushed onto the stack"); 
+	  
+  }
+  
+  /**
+   * Test 3 - Tests 
+   * 
+   * 
+   * 
+   * @throws EmptyStackException 
+   */
+  
+  public void popEmptyStackTest() throws EmptyStackException {
+	  assertThrows(EmptyStackException.class, () -> ns.pop());
 	  
   }
 }
