@@ -1,6 +1,8 @@
  package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +31,10 @@ public class RevPolishCalcTest {
   @Test
   void CalculationTest() {
 	  assertEquals(15, revPolishCalc.calculate(10f, 5f, Symbol.PLUS));
-	  assertEquals(10, revPolishCalc.calculate(200, 20, Symbol.DIVIDE));
+	  assertEquals(10, revPolishCalc.calculate(200f, 20f, Symbol.DIVIDE));
+	  assertEquals(20, revPolishCalc.calculate(5f, 15f, Symbol.PLUS));
+	  assertEquals(10, revPolishCalc.calculate(200f, 190f, Symbol.MINUS));
+	  assertThrows(ArithmeticException.class, () -> revPolishCalc.calculate(5, 0, Symbol.DIVIDE));
   }
   
   /*
