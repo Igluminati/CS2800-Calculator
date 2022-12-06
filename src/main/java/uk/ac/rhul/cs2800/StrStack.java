@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
+
 public class StrStack {
 
 	Stack strstack;
@@ -19,4 +21,16 @@ public class StrStack {
 		return strstack.size();
 	}
 
+	public String pop() throws EmptyStackException {
+		  if (strstack.size() == 0) {
+		    throw new EmptyStackException();
+		  }
+		  try {
+		    String string = strstack.pop().getString();
+		    return string;
+		    } catch (BadTypeException e) {
+		      System.err.println(e);
+		      return "";
+		      }
+		}
 }

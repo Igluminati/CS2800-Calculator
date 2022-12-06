@@ -33,19 +33,19 @@ class StrStackTest {
 	  }
   
   /**
-   * Test 2 - Push a smybol then pop it to OpStack and check its size
+   * Test 2 - Push a String then pop it to StrStack and check its size
    * 
    * 
-   * @result true to indicate that the smybol popped is the symbol pushed
+   * @result true to indicate that the String popped is the String pushed
    */
-  /*
+  
   @Test
   public void PushThenPop() throws EmptyStackException {
-	  os.push(Symbol.DIVIDE);
-	  assertEquals(os.pop(), Symbol.DIVIDE, "The pop method should return the last symbol popped from the stack");
-	  assertEquals(os.size(), 0, "The size of the stack should be 0 after popping the Symbol.DIVIDE pushed onto the stack"); 
+	  ss.push("Earth");
+	  assertEquals(ss.pop(), "Earth", "The pop method should return the last String popped from the stack");
+	  assertEquals(ss.size(), 0, "The size of the stack should be 0 after popping 'Earth' pushed onto the stack"); 
 	  }
-  */
+  
   /**
    * Test 3 - Tests that EmptyStackException is thrown by the pop() method when the stack is empty
    * 
@@ -55,7 +55,7 @@ class StrStackTest {
   /*
   @Test
   public void popEmptyStackTest() throws EmptyStackException {
-	  assertThrows(EmptyStackException.class, () -> os.pop());
+	  assertThrows(EmptyStackException.class, () -> ss.pop());
 	  }
   */
   /**
