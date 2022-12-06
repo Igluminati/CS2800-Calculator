@@ -8,7 +8,7 @@ package uk.ac.rhul.cs2800;
 
 public enum Symbol {
   LEFT_BRACKET("("), RIGHT_BRACKET(")"),
-  MULTIPLY("*"), DIVIDE("/"), PLUS("+"),
+  MULTIPLY("x"), DIVIDE("/"), PLUS("+"),
   MINUS("-"), INVALID("#");
   
   private String value;
@@ -33,4 +33,23 @@ public enum Symbol {
   public String toString() {
     return value;
   }
+
+  public static Symbol getSymbol(String currentSymbol) {
+	  switch (currentSymbol) {
+	  case "(":
+		  return LEFT_BRACKET;
+	  case ")":
+		  return RIGHT_BRACKET;
+      case "x":
+          return MULTIPLY;
+      case "/":
+          return DIVIDE;
+      case "+":
+          return PLUS;
+      case "-":
+          return MINUS;
+      default:
+          return INVALID;
+   }
+}
 }

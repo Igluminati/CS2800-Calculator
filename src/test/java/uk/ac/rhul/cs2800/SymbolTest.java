@@ -10,7 +10,7 @@ public class SymbolTest {
 // Test 1
   @Test
   public void multiplyToStringTest() {
-    assertEquals("*", Symbol.MULTIPLY.toString(),
+    assertEquals("x", Symbol.MULTIPLY.toString(),
         "Checks if the toString() method works and returns the correct symbol");
   }
   
@@ -27,6 +27,8 @@ public class SymbolTest {
  */
   @Test
   public void testGetSymbol() {
+	  assertEquals(Symbol.LEFT_BRACKET, Symbol.getSymbol("("));
+	  assertEquals(Symbol.RIGHT_BRACKET, Symbol.getSymbol(")"));
 	  assertEquals(Symbol.MULTIPLY, Symbol.getSymbol("x"));
 	  assertEquals(Symbol.DIVIDE, Symbol.getSymbol("/"));
 	  assertEquals(Symbol.PLUS, Symbol.getSymbol("+"));
