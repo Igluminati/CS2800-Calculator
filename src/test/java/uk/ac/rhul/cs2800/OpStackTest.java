@@ -65,10 +65,10 @@ class OpStackTest {
    * 
    * @return true if the stack size is 0
    */
-  /*
+  
   @Test
   public void emptyStackTest() {
 	  assertTrue(os.isEmpty());
 	  }
- */
+ 
 }
