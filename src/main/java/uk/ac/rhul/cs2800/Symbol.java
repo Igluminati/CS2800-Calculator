@@ -8,7 +8,7 @@ package uk.ac.rhul.cs2800;
 
 public enum Symbol {
   LEFT_BRACKET("("), RIGHT_BRACKET(")"),
-  MULTIPLY("x"), DIVIDE("/"), PLUS("+"),
+  MULTIPLY("*"), DIVIDE("/"), PLUS("+"),
   MINUS("-"), INVALID("#");
   
   private String value;
@@ -40,7 +40,7 @@ public enum Symbol {
 		  return LEFT_BRACKET;
 	  case ")":
 		  return RIGHT_BRACKET;
-      case "x":
+      case "*":
           return MULTIPLY;
       case "/":
           return DIVIDE;
