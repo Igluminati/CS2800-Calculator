@@ -30,7 +30,7 @@ class OpStackTest {
   public void pushSymbolTest() {
 	  os.push(Symbol.LEFT_BRACKET);
 	  assertEquals(os.size(), 1, "Tests that the size of the stack after being pushed is 1");
-  }
+	  }
   
   /**
    * Test 2 - Push a smybol then pop it to OpStack and check its size
@@ -44,8 +44,7 @@ class OpStackTest {
 	  os.push(Symbol.DIVIDE);
 	  assertEquals(os.pop(), Symbol.DIVIDE, "The pop method should return the last symbol popped from the stack");
 	  assertEquals(os.size(), 0, "The size of the stack should be 0 after popping the Symbol.DIVIDE pushed onto the stack"); 
-	  
-  }
+	  }
   
   /**
    * Test 3 - Tests that EmptyStackException is thrown by the pop() method when the stack is empty
@@ -53,13 +52,12 @@ class OpStackTest {
    * 
    * @throws EmptyStackException 
    */
-  /*
+  
   @Test
   public void popEmptyStackTest() throws EmptyStackException {
 	  assertThrows(EmptyStackException.class, () -> os.pop());
-	  
-  }
-  */
+	  }
+  
   /**
    * Test 4 - Tests that isEmpty() method returns true when the stack is empty
    * 
@@ -71,6 +69,6 @@ class OpStackTest {
   @Test
   public void emptyStackTest() {
 	  assertTrue(os.isEmpty());
-  }
-  */
+	  }
+ */
 }
