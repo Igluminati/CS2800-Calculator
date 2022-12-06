@@ -1,6 +1,7 @@
 package uk.ac.rhul.cs2800;
 
 import java.util.EmptyStackException;
+import java.util.function.BooleanSupplier;
 
 public class StrStack {
 
@@ -33,4 +34,8 @@ public class StrStack {
 		      return "";
 		      }
 		}
+
+	public boolean isEmpty() {
+		return strstack.size() == 0;
+	}
 }
