@@ -24,7 +24,7 @@ public class RevPolishCalc implements Calculator {
 @Override
   public float evaluate(String expression) {
     // TODO Auto-generated method stub
-    String[] arrOfExpression = expression.split(" ");
+    String[] arrOfExpression = expression.split("\\s+");
 
     for (String current : arrOfExpression) {
     	if(current.matches("[0-9]+")) {
@@ -33,7 +33,7 @@ public class RevPolishCalc implements Calculator {
     	}
     	else {
     		try {
-    		Symbol symbol = Symbol.valueOf(current);
+    		Symbol symbol = Symbol.getSymbol(current);
     		float second = values.pop();
     		float first = values.pop();
     		
@@ -42,10 +42,8 @@ public class RevPolishCalc implements Calculator {
     		values.push(outcome);
     		
     		} catch (EmptyStackException e){
-    			throw new IllegalArgumentException();
-    			
+    			throw new IllegalArgumentException();	
     		} catch (NumberFormatException e) {
-    	          // This means that the expression string contains something invalid. Throw an error.
     	          throw new IllegalArgumentException();
     		}
     	}
@@ -69,10 +67,12 @@ public class RevPolishCalc implements Calculator {
 	  	case MULTIPLY:
 	  		return (float) first * second;
 	  	case DIVIDE:
-	  		if(second == 0) {
-	  			throw new ArithmeticException("Cannot divide by zero!");
+	  		if(second != 0) {
+	  			return (float) first / second;
 	  		}
-	  		return first / second;
+	  		else {
+	  			throw new ArithmeticException("Cannot divide by zero!"); 
+	  			}  		
 	  	case PLUS:
 	  		return first + second;
 	  	case MINUS:

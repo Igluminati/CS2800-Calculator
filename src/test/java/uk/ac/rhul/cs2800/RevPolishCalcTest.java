@@ -41,14 +41,16 @@ public class RevPolishCalcTest {
    * Test 2
    * 
    * This test ensures that the correct answer to an expression is given by the evaluate
-   * method in the RevPolishCalc class when it is written in the appropriate format.
+   * method in the RevPolishCalc class when it is written in the appropriate format. Any
+   * length of whitespace should be split.
    */
   
   @Test
   void testValidExpression() {
 	//assertThrows(NumberFormatException.class, () -> revPolishCalc.evaluate("3 2 +"));
-	  assertEquals(5, revPolishCalc.evaluate("3 2 +"));
-    //assertEquals(20, revPolishCalc.evaluate("2 5 9 + x 8 -"));
+	  assertEquals(5, revPolishCalc.evaluate("3   2  + "));
+	  assertEquals(20, revPolishCalc.evaluate("2 5 9 + * 8 -"));
+	  assertEquals(30, revPolishCalc.evaluate("5 6 2 / * 15 +"));
   }
   
 }
