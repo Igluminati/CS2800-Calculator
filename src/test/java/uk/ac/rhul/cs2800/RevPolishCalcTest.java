@@ -42,11 +42,13 @@ public class RevPolishCalcTest {
    * 
    * This test ensures that the correct answer to an expression is given by the evaluate
    * method in the RevPolishCalc class when it is written in the appropriate format.
+   */
   
   @Test
   void testValidExpression() {
-    assertEquals(9, revPolishCalc.evaluate("3 2 1 + x"));
-    assertEquals(20, revPolishCalc.evaluate("2 5 9 + x 8 -"));
+	//assertThrows(NumberFormatException.class, () -> revPolishCalc.evaluate("3 2 +"));
+	  assertEquals(5, revPolishCalc.evaluate("3 2 +"));
+    //assertEquals(20, revPolishCalc.evaluate("2 5 9 + x 8 -"));
   }
-  */
+  
 }
