@@ -25,13 +25,13 @@ class StrStackTest {
    * 
    * @result 1 will be returned since the size of stack after one push is 1
    */
-  /*
+  
   @Test
-  public void pushSymbolTest() {
-	  os.push(Symbol.LEFT_BRACKET);
-	  assertEquals(os.size(), 1, "Tests that the size of the stack after being pushed is 1");
+  public void pushStringTest() {
+	  ss.push("Hello");
+	  assertEquals(ss.size(), 1, "Tests that the size of the stack after being pushed is 1");
 	  }
-  */
+  
   /**
    * Test 2 - Push a smybol then pop it to OpStack and check its size
    * 
