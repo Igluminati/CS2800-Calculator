@@ -38,7 +38,7 @@ class OpStackTest {
    * 
    * @result true to indicate that the smybol popped is the symbol pushed
    */
-  /*
+  
   @Test
   public void PushThenPop() throws EmptyStackException {
 	  os.push(Symbol.DIVIDE);
@@ -46,7 +46,7 @@ class OpStackTest {
 	  assertEquals(os.size(), 0, "The size of the stack should be 0 after popping the Symbol.DIVIDE pushed onto the stack"); 
 	  
   }
-  */
+  
   /**
    * Test 3 - Tests that EmptyStackException is thrown by the pop() method when the stack is empty
    * 
