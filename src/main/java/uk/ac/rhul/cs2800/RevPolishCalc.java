@@ -25,29 +25,33 @@ public class RevPolishCalc implements Calculator {
   public float evaluate(String expression) {
     // TODO Auto-generated method stub
     String[] arrOfExpression = expression.split("\\s+");
-
+    int count = 0;
     for (String current : arrOfExpression) {
     	if(current.matches("[0-9]+")) {
     		float value = Float.parseFloat(current);
     		values.push(value);
+    		count = count + 1;
     	}
     	else {
-    		try {
-    		Symbol symbol = Symbol.getSymbol(current);
-    		float second = values.pop();
-    		float first = values.pop();
-    		
-    		float outcome = calculate(first, second, symbol);
-    		
-    		values.push(outcome);
-    		
-    		} catch (EmptyStackException e){
-    			throw new IllegalArgumentException();	
-    		} catch (NumberFormatException e) {
-    	          throw new IllegalArgumentException();
+	    		try {
+	    		Symbol symbol = Symbol.getSymbol(current);
+	    		float second = values.pop();
+	    		float first = values.pop();
+	    		
+	    		float outcome = calculate(first, second, symbol);
+	    		
+	    		values.push(outcome);
+	    		
+	    		} catch (EmptyStackException e){
+	    			throw new IllegalArgumentException("Stack is empty!");	
+	    		} catch (NumberFormatException e) {
+	    	          throw new IllegalArgumentException("The value is not able to be converted!");
+	    		} 
     		}
+    	if(count == 1) {
+			throw new IllegalArgumentException("Argument requires more float values to complete operation");
+		}
     	}
-    }
     return values.pop();
   }
 

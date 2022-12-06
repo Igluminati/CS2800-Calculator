@@ -53,4 +53,19 @@ public class RevPolishCalcTest {
 	  assertEquals(30, revPolishCalc.evaluate("5 6 2 / * 15 +"));
   }
   
+  /*
+   * Test 3 
+   * 
+   * This test ensures that evaluate() successfully handles any exception
+   * that may occur when the user inputs an expression
+   * 
+   */
+  @Test
+  void testInvalidExpression() {
+	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate("3 2 - *"));
+	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate(""));
+	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate("+"));
+	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate("3"));
+	  
+  }
 }
