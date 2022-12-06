@@ -52,12 +52,12 @@ class StrStackTest {
    * 
    * @throws EmptyStackException 
    */
-  /*
+  
   @Test
   public void popEmptyStackTest() throws EmptyStackException {
 	  assertThrows(EmptyStackException.class, () -> ss.pop());
 	  }
-  */
+  
   /**
    * Test 4 - Tests that isEmpty() method returns true when the stack is empty
    * 
