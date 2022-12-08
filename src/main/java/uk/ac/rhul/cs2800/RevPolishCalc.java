@@ -49,10 +49,10 @@ public class RevPolishCalc implements Calculator {
 	    				throw new IllegalArgumentException("The value is not able to be converted!");
 	    			} 
     			}
-    	if(floatCount < symbolCount) {
-			throw new IllegalArgumentException("Argument requires more float values to complete operation");
-		}
-    }
+    	}
+    	if(floatCount == 1 || floatCount <= symbolCount) {
+    		throw new IllegalArgumentException("Argument is unbalanced");
+    	}
     return values.pop();
   }
 

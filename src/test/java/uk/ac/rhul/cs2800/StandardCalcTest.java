@@ -33,7 +33,7 @@ public class StandardCalcTest {
 	  assertEquals("4 2 3 * + ", StandardCalc.convertToPostfix("4 + ( 2 * 3 )"));
 	  assertEquals("20 6 9 + - 2 * ", StandardCalc.convertToPostfix(" ( 20 - ( 6 + 9 ) ) * 2"));
 	  assertEquals("2 3 + 4 6 + * ", StandardCalc.convertToPostfix("( 2 + 3 ) * ( 4 + 6 )"));
-  }
+	  }
   
   /*
    * Test 2
@@ -48,7 +48,8 @@ public class StandardCalcTest {
 	  assertEquals(5, StandardCalc.evaluate("3 + 2"));
 	  assertEquals(20, StandardCalc.evaluate("( 2 * ( 5 + 9 ) ) - 8"));
 	  assertEquals(30, StandardCalc.evaluate("( 5 * ( 6 / 2 ) ) + 15"));
-  }
+	  }
+  
   /*
    * Test 3 
    * 
@@ -56,14 +57,12 @@ public class StandardCalcTest {
    * that may occur when the user inputs an expression
    * 
    */
-  /*
+  
   @Test
   void testInvalidExpression() {
-	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate("3 2 - *"));
-	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate(""));
-	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate("+"));
-	  assertThrows(IllegalArgumentException.class, () -> revPolishCalc.evaluate("3"));
-	  
-  }
-  */
+	  assertThrows(IllegalArgumentException.class, () -> StandardCalc.evaluate("3 * - 2"));
+	  assertThrows(IllegalArgumentException.class, () -> StandardCalc.evaluate(""));
+	  assertThrows(IllegalArgumentException.class, () -> StandardCalc.evaluate("+"));
+	  assertThrows(IllegalArgumentException.class, () -> StandardCalc.evaluate("3"));
+	  }
 }
