@@ -23,12 +23,26 @@ public class StandardCalc implements Calculator {
 	  rpCalc = new RevPolishCalc();
   }
   
+  /**
+   * So long as a feature to convert infix to postfix exists, it would
+   * be wise to pass the returned value of the convertToPostfix() method
+   * to the calculate method in revPolishCalc as a way to remove unnecessary code.
+   * 
+   * @return the evaluated expression after conversion to postfix
+   */
   @Override
   public float evaluate(String expression) {
 	  String postfixExpression = convertToPostfix(expression);
 	  return rpCalc.evaluate(postfixExpression);
   }
 
+
+  /**
+   * Converts infix expressions into postfix form so that it can be
+   * evaluated through the instance of RevPolishCalc class
+   * 
+   * @return postfix expression
+   */
   String convertToPostfix(String expression) {
 	  String[] arrOfExpression = expression.split("\\s+");
 	  String postfix = "";
@@ -36,12 +50,15 @@ public class StandardCalc implements Calculator {
 	  Symbol currentPoppedSymbol = Symbol.INVALID;
 	  
 	  for (String current : arrOfExpression) {
+		// Checks if the current element is numeric
 		  if(current.matches("[0-9]+")) {
+			  // Adds numeric element to postfix expression
 			  postfix = postfix + current.toString() + " ";
 			  } 
 		  else {
 			  currentSymbol = Symbol.getSymbol(current);
 			  
+			  // Code block ensures that left and right brackets aren't added to postfix expression
 			  if(currentSymbol == Symbol.LEFT_BRACKET) {
 				  values.push(currentSymbol);
 			  }
@@ -56,6 +73,9 @@ public class StandardCalc implements Calculator {
 			  }
 		  }
 	  
+	  /* All remaining elements that are popped from the OpStack are added to the
+	   * postfix expression so long as they are not invalid symbols
+	   */
 	  while(!values.isEmpty() && (currentPoppedSymbol = values.pop()) != Symbol.INVALID) {
 		  postfix += currentPoppedSymbol.toString() + " ";
 		  }

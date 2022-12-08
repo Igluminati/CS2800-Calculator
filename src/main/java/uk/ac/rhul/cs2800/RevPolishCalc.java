@@ -21,6 +21,14 @@ public class RevPolishCalc implements Calculator {
 	  values = new NumStack();
   }
   
+  /**
+   * Creates an array of string values by splitting the whitespace in the expression string.
+   * Each element is then evaluated to determine whether it is a float, symbol or other
+   * (in which case: an exception is thrown)
+   * 
+   * @throws IllegalArgumentException if expression isn't in the correct form
+   * @return the calculated answer of an expression in postfix form 
+   */
   @Override
   public float evaluate(String expression) {
     // TODO Auto-generated method stub
@@ -28,6 +36,7 @@ public class RevPolishCalc implements Calculator {
     int floatCount = 0;
     int symbolCount = 0;
     for (String current : arrOfExpression) {
+    	// Checks if the current element is numeric
     	if(current.matches("[0-9]+")) {
     		float value = Float.parseFloat(current);
     		values.push(value);
@@ -35,6 +44,7 @@ public class RevPolishCalc implements Calculator {
     	}
     	else {
 	    		try {
+	    			// Tries to parse current element as a symbol enum
 	    			Symbol symbol = Symbol.getSymbol(current);
 	    			symbolCount = symbolCount + 1;
 	    			float second = values.pop();
@@ -50,6 +60,7 @@ public class RevPolishCalc implements Calculator {
 	    			} 
     			}
     	}
+    	// If there is a single float or there are less floats than symbols then the operation cannot be performed
     	if(floatCount == 1 || floatCount <= symbolCount) {
     		throw new IllegalArgumentException("Argument is unbalanced");
     	}

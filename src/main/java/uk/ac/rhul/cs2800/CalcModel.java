@@ -17,11 +17,12 @@ public class CalcModel {
 		Standard = new StandardCalc();
 	}
 
-	/*
+	/**
 	 * The evaluate method takes two arguments: The String expression
 	 * and a boolean infix to indicate whether the expression is
 	 * infix (true) or postfix (false)
 	 * 
+	 * @return the result of the evaluation
 	 */
 	
 	public float evaluate(String expression, boolean infix) {
