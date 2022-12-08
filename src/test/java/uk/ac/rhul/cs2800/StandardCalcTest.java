@@ -42,15 +42,13 @@ public class StandardCalcTest {
    * be wise to pass the returned value of the convertToPostfix() method
    * to the calculate method in revPolishCalc as a way to remove unnecessary code.
    */
-  /*
+  
   @Test
   void testValidExpression() {
-	//assertThrows(NumberFormatException.class, () -> revPolishCalc.evaluate("3 2 +"));
 	  assertEquals(5, StandardCalc.evaluate("3 + 2"));
 	  assertEquals(20, StandardCalc.evaluate("( 2 * ( 5 + 9 ) ) - 8"));
 	  assertEquals(30, StandardCalc.evaluate("( 5 * ( 6 / 2 ) ) + 15"));
   }
-  */
   /*
    * Test 3 
    * 

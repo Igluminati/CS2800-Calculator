@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
 
 /**
  * RevPolishCalc implements the 'evaluate()' abstract method in the 'Calculator' interface,
- * which is overriden to allow for expressions in Reverse Polish Calculation to be evaluated.
+ * which is overridden to allow for expressions in Reverse Polish Calculation to be evaluated.
  * 
  * 
  *  @author Igli Kristo zjac300 
@@ -21,37 +21,38 @@ public class RevPolishCalc implements Calculator {
 	  values = new NumStack();
   }
   
-@Override
+  @Override
   public float evaluate(String expression) {
     // TODO Auto-generated method stub
     String[] arrOfExpression = expression.split("\\s+");
-    int count = 0;
+    int floatCount = 0;
+    int symbolCount = 0;
     for (String current : arrOfExpression) {
     	if(current.matches("[0-9]+")) {
     		float value = Float.parseFloat(current);
     		values.push(value);
-    		count = count + 1;
+    		floatCount = floatCount + 1;
     	}
     	else {
 	    		try {
-	    		Symbol symbol = Symbol.getSymbol(current);
-	    		float second = values.pop();
-	    		float first = values.pop();
+	    			Symbol symbol = Symbol.getSymbol(current);
+	    			symbolCount = symbolCount + 1;
+	    			float second = values.pop();
+	    			float first = values.pop();
+	    			float outcome = calculate(first, second, symbol);
 	    		
-	    		float outcome = calculate(first, second, symbol);
+	    			values.push(outcome);
 	    		
-	    		values.push(outcome);
-	    		
-	    		} catch (EmptyStackException e){
-	    			throw new IllegalArgumentException("Stack is empty!");	
-	    		} catch (NumberFormatException e) {
-	    	          throw new IllegalArgumentException("The value is not able to be converted!");
-	    		} 
-    		}
-    	if(count == 1) {
+	    			} catch (EmptyStackException e){
+	    				throw new IllegalArgumentException("Stack is empty!");	
+	    			} catch (NumberFormatException e) {
+	    				throw new IllegalArgumentException("The value is not able to be converted!");
+	    			} 
+    			}
+    	if(floatCount < symbolCount) {
 			throw new IllegalArgumentException("Argument requires more float values to complete operation");
 		}
-    	}
+    }
     return values.pop();
   }
 
@@ -78,9 +79,9 @@ public class RevPolishCalc implements Calculator {
 	  			throw new ArithmeticException("Cannot divide by zero!"); 
 	  			}  		
 	  	case PLUS:
-	  		return first + second;
+	  		return (float) first + second;
 	  	case MINUS:
-	  		return first - second;
+	  		return (float) first - second;
 	  	default:
 	  		return 0f;
 	  }
