@@ -20,7 +20,7 @@ public class CalcModel {
 	/*
 	 * The evaluate method takes two arguments: The String expression
 	 * and a boolean infix to indicate whether the expression is
-	 * infix (true) or postfix ()
+	 * infix (true) or postfix (false)
 	 * 
 	 */
 	
