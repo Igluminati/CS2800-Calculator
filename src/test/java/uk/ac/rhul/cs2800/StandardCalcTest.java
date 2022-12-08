@@ -1,6 +1,7 @@
  package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +20,6 @@ public class StandardCalcTest {
     StandardCalc = new StandardCalc();
   }
   
-  
   /*
    * Test 1
    * 
@@ -29,10 +29,10 @@ public class StandardCalcTest {
   
   @Test
   void ConversionTest() {
-	  assertEquals("1 1 +", StandardCalc.convertToPostfix("1 + 1"));
-	  assertEquals("4 2 3 * +", StandardCalc.convertToPostfix("4 + ( 2 * 3 )"));
-	  assertEquals("6 9 + 20 - 2 + ", StandardCalc.convertToPostfix(" ( 20 - ( 6 + 9 ) ) * 2"));
-	  assertEquals("2 3 + 4 6 + *", StandardCalc.convertToPostfix("( 2 + 3 ) * ( 4 + 6 )"));
+	  assertEquals("1 1 + ", StandardCalc.convertToPostfix("1 + 1"));
+	  assertEquals("4 2 3 * + ", StandardCalc.convertToPostfix("4 + ( 2 * 3 )"));
+	  assertEquals("20 6 9 + - 2 * ", StandardCalc.convertToPostfix(" ( 20 - ( 6 + 9 ) ) * 2"));
+	  assertEquals("2 3 + 4 6 + * ", StandardCalc.convertToPostfix("( 2 + 3 ) * ( 4 + 6 )"));
   }
   
   /*
@@ -40,7 +40,7 @@ public class StandardCalcTest {
    * 
    * So long as a feature to convert infix to postfix exists, it would
    * be wise to pass the returned value of the convertToPostfix() method
-   * to the calculate method in revPolishCalc as a way to remove unecessary code.
+   * to the calculate method in revPolishCalc as a way to remove unnecessary code.
    */
   /*
   @Test
